@@ -36,6 +36,7 @@ var defaults = {
   stickyPointerLock: true,
   dragCameraOutsidePointerLock: true,
   skipDefaultHighlighting: false,
+  enableDebug: false,
 }
 
 /**
@@ -178,7 +179,7 @@ function Engine(opts) {
   this.inputs.bind('debug', 'Z')
   this.inputs.down.on('debug', function onDebug() {
     debug = !debug
-    if (debug) window.scene.debugLayer.show(); else window.scene.debugLayer.hide();
+    if (opts.enableDebug && debug) window.scene.debugLayer.show(); else window.scene.debugLayer.hide();
   })
 
 
