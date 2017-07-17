@@ -37,7 +37,6 @@ function checkZoom(state, id, zoom, ents) {
 	if (state._showing && zoom < state.cutoff || !state._showing && zoom > state.cutoff) {
 		var mesh = ents.getMeshData(id).mesh
 		state._showing = (zoom > state.cutoff)
-		mesh.setEnabled(state._showing)
 	}
 }
 
