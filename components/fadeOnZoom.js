@@ -30,13 +30,13 @@ module.exports = function (noa) {
 	}
 }
 
-this.noa.entities.getMeshData(this.noa.playerEntity).mesh.setEnabled(this.zoom > 0 ? 1 : 0);
 function checkZoom(state, id, zoom, ents) {
 	if (!ents.hasMesh(id)) return
 
 	if (state._showing && zoom < state.cutoff || !state._showing && zoom > state.cutoff) {
 		var mesh = ents.getMeshData(id).mesh
 		state._showing = (zoom > state.cutoff)
+		mesh.setEnabled(state._showing)
 	}
 }
 
